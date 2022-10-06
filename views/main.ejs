@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="resources/mainpage/styles.css" />
+		<title>Midi Files</title>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png">
+		<link rel="manifest" href="resources/favicons/site.webmanifest">
+		<link rel="mask-icon" href="resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="resources/favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="resources/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body> 
+		<div class="flexboxcolumn bottomLeft">
+			<div class="flexboxrow switchBox">
+				<label class="switch" onmouseover="showSwitchLabel(true, 'narrowMode')" onmouseout="showSwitchLabel(false, 'narrowMode')">
+					<input type="checkbox" id="narrowCheckbox" onclick="toggleNarrowMode(this.checked)">
+					<span class="slider round"></span>
+				</label>
+				<div class="switchLabel" id="narrowMode">
+					<a>
+						Narrow Screen Mode
+					</a>
+				</div>
+			</div>
+			<div class="flexboxrow switchBox">
+				<label class="switch" onmouseover="showSwitchLabel(true, 'colorblindMode')" onmouseout="showSwitchLabel(false, 'colorblindMode')">
+					<input type="checkbox" id="colorblindCheckbox" onclick="toggleColorblindMode(this.checked)">
+					<span class="slider round"></span>
+				</label>
+				<div class="switchLabel" id="colorblindMode">
+					<a>
+						Colorblind Mode
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="flexboxrow centered">
+			<div class="listContainer" id="listContainer">
+				<% for(x in data) { %>
+					<div class="listItem" onclick="copyLink(this)" data-filename="<%= data[x].FileName %>">
+						<div class="listItemTitle"><%= data[x].Name %></div>
+						<div class="listItemSubtitle"><%= data[x].Artist %></div>
+						<% if (data[x].Highlight) { %>
+						<div class="highlighterContainer">
+							<div class="highlighter"></div>
+						</div>
+						<% } %>
+						<div class="copyIndicContainer">
+							<div class="copiedIndicator" id="<%= data[x].FileName %>copyAlert">Copied!</div>
+						</div>
+						<% if (data[x].Accordion_Applicability) { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has been certified to sound good when played on the accordion!">
+								<img class="qualityImage instrumentEnabled" src="resources/instruments/accordion-yes.png">
+							</div>
+						<% } else { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has not been certified with the accordion.">
+								<img class="qualityImage" src="resources/instruments/accordion-no.png">
+							</div>
+						<% } %>
+	
+						<% if (data[x].Banjo_Applicability) { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has been certified to sound good when played on the banjo!">
+								<img class="qualityImage instrumentEnabled" src="resources/instruments/banjo-yes.png">
+							</div>
+						<% } else { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has not been certified with the banjo.">
+								<img class="qualityImage" src="resources/instruments/banjo-no.png">
+							</div>
+						<% } %>
+	
+						<% if (data[x].Fiddle_Applicability) { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has been certified to sound good when played on the fiddle!">
+								<img class="qualityImage instrumentEnabled" src="resources/instruments/fiddle-yes.png">
+							</div>
+						<% } else { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has not been certified with the fiddle.">
+								<img class="qualityImage" src="resources/instruments/fiddle-no.png">
+							</div>
+						<% } %>
+						
+						<% if (data[x].Guitar_Applicability) { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has been certified to sound good when played on the guitar!">
+								<img class="qualityImage instrumentEnabled" src="resources/instruments/guitar-yes.png">
+							</div>
+						<% } else { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has not been certified with the guitar.">
+								<img class="qualityImage" src="resources/instruments/guitar-no.png">
+							</div>
+						<% } %>
+	
+						<% if (data[x].Harmonica_Applicability) { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has been certified to sound good when played on the harmoinca!">
+								<img class="qualityImage instrumentEnabled" src="resources/instruments/harmonica-yes.png">
+							</div>
+						<% } else { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has not been certified with the trumpet.">
+								<img class="qualityImage" src="resources/instruments/harmonica-no.png">
+							</div>
+						<% } %>
+						
+						<% if (data[x].Organ_Applicability) { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has been certified to sound good when played on the organ!">
+								<img class="qualityImage instrumentEnabled" src="resources/instruments/organ-yes.png">
+							</div>
+						<% } else { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has not been certified with the organ.">
+								<img class="qualityImage" src="resources/instruments/organ-no.png">
+							</div>
+						<% } %>
+						
+						<% if (data[x].Piano_Applicability) { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has been certified to sound good when played on the piano!">
+								<img class="qualityImage instrumentEnabled" src="resources/instruments/piano-yes.png">
+							</div>
+						<% } else { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has not been certified with the piano.">
+								<img class="qualityImage" src="resources/instruments/piano-no.png">
+							</div>
+						<% } %>
+	
+						<% if (data[x].Trumpet_Applicability) { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has been certified to sound good when played on the trumpet!">
+								<img class="qualityImage instrumentEnabled" src="resources/instruments/trumpet-yes.png">
+							</div>
+						<% } else { %>
+							<div class="qualityImageContainer" title="This MIDI sheet has not been certified with the trumpet.">
+								<img class="qualityImage" src="resources/instruments/trumpet-no.png">
+							</div>
+						<% } %>
+					</div>
+				<% } %>
+			</div>
+		</div>
+		<script src="./resources/mainpage/scripts.js">
+		</script> 
+	</body>
+</html>
+

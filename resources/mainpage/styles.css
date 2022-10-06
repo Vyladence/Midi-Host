@@ -1,0 +1,207 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Lato", "Helvetica", Helvetica, sans-serif;
+  background: #252525;
+  letter-spacing: 1px;
+}
+
+.flexboxrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexboxcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.centered {
+  justify-content: center;
+}
+
+.bottomLeft {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+.listContainer {
+  width: 1500px;
+  transition: 500ms;
+}
+
+.listContainer .listItem {
+  display: flex;
+  height: 60px;
+  border-bottom: 1px #555 solid;
+  cursor: pointer;
+  transition: 100ms;
+}
+
+.listContainer .listItem:hover {
+  background-color: #282828;
+}
+
+.listContainer .listItem .listItemTitle {
+  display:flex;
+  height:100%;
+  padding-left: 20px;
+  width: fit-content;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Arial;
+  font-weight: bold;
+  color: #eee
+}
+
+.listContainer .listItem .listItemSubtitle {
+  display:flex;
+  height:100%;
+  padding-left: 20px;
+  width: fit-content;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Arial;
+  color: #ccc
+}
+
+.listContainer .listItem .highlighterContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.listContainer .listItem .highlighter {
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  background: url("./gold-leaf.png")
+}
+
+.listContainer .listItem .copyIndicContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.listContainer .listItem .copiedIndicator {
+  height:40px;
+  background-color: #151515;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  color: #fff;
+  opacity: 0%;
+  transition: 50ms
+}
+
+.listContainer .listItem .qualityImageContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.listContainer .listItem .qualityImageContainer .qualityImage {
+  height: 40px;
+  filter: saturate(2.5);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switchBox {
+  margin-top: 10px;
+}
+
+ /* The switch - the box around the slider */
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+
+.switchLabel {
+  background-color: #181818;
+  color: white;
+  border-radius: 4px;
+  margin-left: 5px;
+  transform: translateX(-100%);
+  opacity: 0%;
+  transition: 400ms;
+  z-index: -1;
+}
+
+.switchLabel > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin-left: 6px;
+  margin-right: 6px;
+}

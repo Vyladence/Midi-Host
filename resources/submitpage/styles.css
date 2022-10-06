@@ -1,0 +1,65 @@
+body {
+  display:flex;
+  font-family: "Lato", "Helvetica", Helvetica, sans-serif;
+  background: #252525;
+  letter-spacing: 1px;
+  justify-content: center;
+}
+
+.mainform {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxWLabel {
+  flex-direction: row;
+}
+
+.marginTop {
+  margin-top: 20px;
+}
+
+.checkboxLabel {
+  color: #fff
+}
+
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 500px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  height: 40px;
+  margin: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.inputBox {
+	background: #ffffff;
+	color: black;
+	border: 1px solid lightgrey;
+	border-radius: 4px;
+	height: 30px;
+	width: 100%;
+	margin-top: 5px;
+}
+
+.buttonLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button:hover {
+  background: #ddd;
+}
+
+#fileUpload {
+  display: none;
+}

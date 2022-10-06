@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="resources/submitpage/styles.css" />
+		<title>Upload a Midi File</title>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png">
+		<link rel="manifest" href="resources/favicons/site.webmanifest">
+		<link rel="mask-icon" href="resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="resources/favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="resources/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body> 
+		<form id="submitForm" class="mainform" action="/submit" method="post" enctype="multipart/form-data">
+			<input type="file" id="fileUpload" name="midiFile" accept=".mid, .midi" onchange="changeText(this.files)">
+			<label class="button" id="fileUploadButton" for="fileUpload"><a class="buttonLabel">Select a file</a></label>
+			<input type="text" id="songName" name="songName" placeholder="Song Name" class="inputBox marginTop">
+			<input type="text" id="artistName" name="artistName" placeholder="Artist Name" class="inputBox">
+			<div class="checkboxWLabel marginTop">
+				<input type="checkbox" id="banjo_applicability" name="banjo_applicability">
+				<label class="checkboxLabel" for="banjo_applicability">Banjo</label>
+			</div>
+			<div class="checkboxWLabel">
+				<input type="checkbox" id="fiddle_applicability" name="fiddle_applicability">
+				<label class="checkboxLabel" for="fiddle_applicability">Fiddle</label>
+			</div>
+			<div class="checkboxWLabel">
+				<input type="checkbox" id="guitar_applicability" name="guitar_applicability">
+				<label class="checkboxLabel" for="guitar_applicability">Guitar</label>
+			</div>
+			<div class="checkboxWLabel">
+				<input type="checkbox" id="organ_applicability" name="organ_applicability">
+				<label class="checkboxLabel" for="organ_applicability">Organ</label>
+			</div>
+			<div class="checkboxWLabel">
+				<input type="checkbox" id="accordion_applicability" name="accordion_applicability">
+				<label class="checkboxLabel" for="accordion_applicability">Accordion</label>
+			</div>
+			<div class="checkboxWLabel">
+				<input type="checkbox" id="piano_applicability" name="piano_applicability">
+				<label class="checkboxLabel" for="piano_applicability">Piano</label>
+			</div>
+			<div class="checkboxWLabel">
+				<input type="checkbox" id="harmonica_applicability" name="harmonica_applicability">
+				<label class="checkboxLabel" for="harmonica_applicability">Harmonica</label>
+			</div>
+			<div class="checkboxWLabel">
+				<input type="checkbox" id="trumpet_applicability" name="trumpet_applicability">
+				<label class="checkboxLabel" for="trumpet_applicability">Trumpet</label>
+			</div>
+			<input type="submit" class="marginTop button" id="fuckinsenditbutton" value="Fuckin' Send It" disabled>
+		</form>
+		<script src="./resources/submitpage/scripts.js">
+		</script> 
+	</body>
+</html>
+
